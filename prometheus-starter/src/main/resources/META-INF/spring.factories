@@ -1,0 +1,4 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.amdocs.ms.config.PrometheusWebConfigAdapter,\
+com.amdocs.ms.WebAppInitializer
