@@ -1,4 +1,4 @@
-package com.amdocs.ms.jmx.copy;
+package com.amdocs.ms.jmx;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.util.HashMap;

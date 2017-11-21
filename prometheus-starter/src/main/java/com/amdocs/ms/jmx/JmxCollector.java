@@ -1,4 +1,4 @@
-package com.amdocs.ms.jmx.copy;
+package com.amdocs.ms.jmx;
 import io.prometheus.client.Collector;
 import io.prometheus.client.Counter;
 import java.io.IOException;
