@@ -1,4 +1,4 @@
-package com.amdocs.ms;
+package com.ms;
 
 import javax.servlet.ServletContext;
 
@@ -10,7 +10,7 @@ import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
-import com.amdocs.ms.config.PrometheusWebConfigAdapter;
+import com.ms.config.PrometheusWebConfigAdapter;
 
 @Configuration
 public class WebAppInitializer implements WebApplicationInitializer {

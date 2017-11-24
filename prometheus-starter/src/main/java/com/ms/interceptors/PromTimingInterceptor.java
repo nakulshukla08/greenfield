@@ -1,4 +1,4 @@
-package com.amdocs.ms.interceptors;
+package com.ms.interceptors;
 
 import java.lang.reflect.Method;
 

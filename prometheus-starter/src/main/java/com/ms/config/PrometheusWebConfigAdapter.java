@@ -1,4 +1,4 @@
-package com.amdocs.ms.config;
+package com.ms.config;
 
 
 
@@ -11,8 +11,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import com.amdocs.ms.interceptors.PromRequestInterceptor;
-import com.amdocs.ms.interceptors.PromTimingInterceptor;
+import com.ms.interceptors.PromRequestInterceptor;
+import com.ms.interceptors.PromTimingInterceptor;
 
 
 @Configuration

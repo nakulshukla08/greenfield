@@ -1,4 +1,4 @@
-package com.amdocs.ms.config;
+package com.ms.config;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
-import com.amdocs.ms.jmx.JmxCollector;
+import com.ms.jmx.JmxCollector;
 
 import io.prometheus.client.CollectorRegistry;
 import io.prometheus.client.exporter.MetricsServlet;

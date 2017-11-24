@@ -1,4 +1,4 @@
-package com.amdocs.ms.config;
+package com.ms.config;
 import io.prometheus.client.CollectorRegistry;
 import io.prometheus.client.exporter.common.TextFormat;
 import java.io.IOException;

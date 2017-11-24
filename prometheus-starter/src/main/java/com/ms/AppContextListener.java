@@ -1,4 +1,4 @@
-package com.amdocs.ms;
+package com.ms;
 
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
