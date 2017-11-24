@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.endpoint.mvc.AbstractMvcEndpoint;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
+/**
+@author nakuls
+*/
 class PrometheusActuatorEndpoint extends AbstractMvcEndpoint {
 
   PrometheusActuatorEndpoint(String path, boolean sensitive) {

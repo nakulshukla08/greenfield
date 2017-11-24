@@ -23,6 +23,10 @@ import io.prometheus.client.CollectorRegistry;
 import io.prometheus.client.exporter.MetricsServlet;
 import io.prometheus.client.spring.boot.SpringBootMetricsCollector;
 
+/**
+@author nakuls
+*/
+
 @Configuration
 @ConditionalOnClass(CollectorRegistry.class)
 public class PrometheusConfiguration {

@@ -14,6 +14,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import com.ms.interceptors.PromRequestInterceptor;
 import com.ms.interceptors.PromTimingInterceptor;
 
+/**
+@author nakuls
+*/
 
 @Configuration
 @EnableWebMvc

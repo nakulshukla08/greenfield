@@ -11,7 +11,9 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 import org.springframework.web.servlet.DispatcherServlet;
 
 import com.ms.config.PrometheusWebConfigAdapter;
-
+/**
+@author nakuls
+*/
 @Configuration
 public class WebAppInitializer implements WebApplicationInitializer {
 	@Override
