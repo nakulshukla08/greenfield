@@ -9,6 +9,7 @@ import javax.management.MalformedObjectNameException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.actuate.endpoint.PublicMetrics;
 import org.springframework.boot.actuate.endpoint.mvc.AbstractMvcEndpoint;
+import org.springframework.boot.actuate.metrics.Metric;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -24,8 +25,8 @@ import io.prometheus.client.exporter.MetricsServlet;
 import io.prometheus.client.spring.boot.SpringBootMetricsCollector;
 
 /**
-@author nakuls
-*/
+ * @author nakuls
+ */
 
 @Configuration
 @ConditionalOnClass(CollectorRegistry.class)
@@ -74,6 +75,13 @@ public class PrometheusConfiguration {
 	public SpringBootMetricsCollector springBootMetricsCollector(Collection<PublicMetrics> publicMetrics) {
 		System.out.println("springBootMetricsCollector initializes..");
 
+		for (PublicMetrics metrics : publicMetrics) {
+
+			for (Metric metric : metrics.metrics()) {
+				System.out.println(metric.toString());
+			}
+
+		}
 		SpringBootMetricsCollector springBootMetricsCollector = new SpringBootMetricsCollector(publicMetrics);
 
 		springBootMetricsCollector.register();

@@ -5,23 +5,29 @@ import java.lang.reflect.Method;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import io.prometheus.client.Counter;
+import com.ms.metrics.Counter;
+import com.ms.metrics.MetricsProvider;
+
+import io.prometheus.client.CollectorRegistry;
 
 /**
 @author nakuls
 */
 
 @Component
+@ConditionalOnClass(CollectorRegistry.class)
 public class PromRequestInterceptor extends HandlerInterceptorAdapter {
 
 	// @formatter:off
 	// Note (1)
-	private static final Counter requestTotal = Counter.build().name("http_requests_total")
-			.labelNames("method", "handler", "status").help("Http Request Total").register();
+	private static final Counter requestTotal = /*Counter.build().name("http_requests_total")
+			.labelNames("method", "handler", "status").help("Http Request Total").register();*/
+			MetricsProvider.createCounter().addLabels("method", "handler", "status").addName("http_requests_total").addHelpText("Http Request Total").build();
 	// @formatter:on
 
 	@Override
@@ -37,6 +43,6 @@ public class PromRequestInterceptor extends HandlerInterceptorAdapter {
 			handlerLabel = method.getDeclaringClass().getSimpleName() + "." + method.getName();
 		}
 		// Note (2)
-		requestTotal.labels(request.getMethod(), handlerLabel, Integer.toString(response.getStatus())).inc();
+		requestTotal.labelAndInc(request.getMethod(), handlerLabel, Integer.toString(response.getStatus()));
 	}
 }

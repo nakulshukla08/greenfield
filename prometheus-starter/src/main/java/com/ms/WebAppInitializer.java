@@ -14,7 +14,7 @@ import com.ms.config.PrometheusWebConfigAdapter;
 /**
 @author nakuls
 */
-@Configuration
+//@Configuration
 public class WebAppInitializer implements WebApplicationInitializer {
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {

@@ -5,10 +5,12 @@ import java.lang.reflect.Method;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import io.prometheus.client.CollectorRegistry;
 import io.prometheus.client.Summary;
 
 /**
@@ -16,6 +18,7 @@ import io.prometheus.client.Summary;
 */
 
 @Component
+@ConditionalOnClass(CollectorRegistry.class)
 public class PromTimingInterceptor extends HandlerInterceptorAdapter {
 
     private static final String REQ_PARAM_TIMING = "timing";

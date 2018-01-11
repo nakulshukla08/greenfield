@@ -3,6 +3,7 @@ package com.ms.config;
 
 
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.annotation.ComponentScan;
 
@@ -14,6 +15,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import com.ms.interceptors.PromRequestInterceptor;
 import com.ms.interceptors.PromTimingInterceptor;
 
+import io.prometheus.client.CollectorRegistry;
+
 /**
 @author nakuls
 */
@@ -23,6 +26,7 @@ import com.ms.interceptors.PromTimingInterceptor;
 @ComponentScan(basePackages = "com.amdocs.opensource")
 @ConditionalOnWebApplication
 @AutoConfigureAfter
+@ConditionalOnClass(CollectorRegistry.class)
 public class PrometheusWebConfigAdapter extends WebMvcConfigurerAdapter {
 
 //	private List<HandlerInterceptorAdapter> interceptors;
