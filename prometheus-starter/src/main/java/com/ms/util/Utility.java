@@ -41,7 +41,11 @@ public class Utility {
 	public static Utility getInstance() {
 
 		if (INSTANCE == null) {
-			INSTANCE = new Utility();
+			synchronized (Utility.class) {
+				if (INSTANCE == null) {
+					INSTANCE = new Utility();
+				}
+			}
 		}
 
 		return INSTANCE;
